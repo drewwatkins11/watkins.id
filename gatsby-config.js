@@ -6,5 +6,15 @@
 
 module.exports = {
   /* Your site config here */
-  plugins: [],
+  plugins: [
+    {
+      resolve: "@chakra-ui/gatsby-plugin",
+      options: {
+        /** @property {boolean} [resetCSS=true] **/
+        resetCSS: true,
+        /** @property {boolean} [isUsingColorMode=true] **/
+        isUsingColorMode: true,
+      },
+    },
+  ],
 }
