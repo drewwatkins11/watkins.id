@@ -16,5 +16,8 @@ module.exports = {
         isUsingColorMode: true,
       },
     },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
-}
+};
