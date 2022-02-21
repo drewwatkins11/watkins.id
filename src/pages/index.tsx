@@ -10,6 +10,7 @@ export default function Home() {
         <Heading as="h1" size="h1">
           Drew Watkins
         </Heading>
+        <Text>Product leader, developer, technologist, and tinkerer.</Text>
       </Flex>
     </Layout>
   );

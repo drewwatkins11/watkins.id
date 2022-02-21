@@ -16,6 +16,16 @@ module.exports = {
         isUsingColorMode: true,
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          // `crimson pro`,
+          "open sans",
+        ],
+        display: "swap",
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

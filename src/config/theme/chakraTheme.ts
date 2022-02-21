@@ -10,7 +10,7 @@ const chakraTheme = {
   },
   fonts: {
     heading: "Butler",
-    body: "Butler",
+    body: "Open Sans",
   },
   fontSizes: {
     md: "20px",
@@ -18,6 +18,11 @@ const chakraTheme = {
   components: {
     Text,
     Heading,
+    Divider: {
+      baseStyle: {
+        borderColor: "gray.500",
+      },
+    },
   },
   space: {
     xs: "0.5rem",
@@ -30,6 +35,9 @@ const chakraTheme = {
   },
   styles: {
     global: {
+      ":root": {
+        fontSize: "1.25rem",
+      },
       "html, body": {
         color: colorKeys.text,
         backgroundColor: colorPalettes.earth[100],

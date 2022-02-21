@@ -8,7 +8,7 @@ const Layout: React.FC = ({ children }) => {
     <>
       <Fonts />
       <Center>
-        <Flex w="90vw" maxW="1200px" direction="column">
+        <Flex w={["90vw", "85vw", "80vw"]} maxW="1140px" direction="column">
           <Header />
           {children}
         </Flex>
