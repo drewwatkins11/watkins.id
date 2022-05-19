@@ -39,7 +39,7 @@ export default function Home() {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/hcD7StumxN0"
+            src="https://www.youtube.com/embed/UGOYniUbDW0"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -48,7 +48,7 @@ export default function Home() {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/mgW9GbGaZVI"
+            src="https://www.youtube.com/embed/hcD7StumxN0"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
