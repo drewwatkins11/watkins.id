@@ -14,6 +14,8 @@ import {
 import { useState } from "react";
 import { useMemo } from "react";
 import { isMobile } from "react-device-detect";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 
 const Watch = () => {
   return (
@@ -141,6 +143,7 @@ const AboutPage = () => {
         variant="link"
         onClick={() => setCurrentPage(pageKey)}
         color="independence"
+        fontWeight={400}
         _active={{ color: "international" }}
         isActive={currentPage === pageKey}
       >
@@ -156,6 +159,19 @@ const AboutPage = () => {
           <AboutLink pageKey="about" label="About" />
           {/* <AboutLink pageKey="resume" label="Resumè" /> */}
           <AboutLink pageKey="talks" label="Talks" />
+          <Link
+            href="https://linkedin.com/in/drewwatkins11"
+            isExternal
+            color="independence"
+            whiteSpace="nowrap"
+          >
+            <Text whiteSpace="nowrap">
+              LinkedIn{" "}
+              <Text as="span" fontSize="sm">
+                <FontAwesomeIcon icon={solid("arrow-up-right-from-square")} />
+              </Text>
+            </Text>
+          </Link>
         </Stack>
         <Box
           borderLeft="3px solid"
