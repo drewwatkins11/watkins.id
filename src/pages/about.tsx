@@ -9,9 +9,11 @@ import {
   HStack,
   Box,
   SimpleGrid,
+  Link,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import { useMemo } from "react";
+import { isMobile } from "react-device-detect";
 
 const Watch = () => {
   return (
@@ -47,9 +49,62 @@ const Watch = () => {
 
 const About = () => {
   return (
-    <Text>
-      Product strategist, technologist, occasional developer, and tinkerer.
-    </Text>
+    <Stack>
+      <Flex direction="column" pb="lg">
+        <Text color="independence">about</Text>
+        <Heading as="h1">Drew Watkins</Heading>
+        <Text>
+          Product strategist, technologist, occasional developer, and tinkerer.
+        </Text>
+      </Flex>
+      {/* <Heading as="h2" fontSize="xl">
+        What I do
+      </Heading> */}
+      <Text variant="serif">
+        I bring products to life through product leadership, full-stack
+        development, and human-centered design. Currently, I work as the Product
+        Lead at <Link href="https://interobang.group">Interobang</Link>, where I
+        have the opportunity to test, prototype, and build products through the
+        early stages of market adoption.
+      </Text>
+
+      <Text variant="serif">
+        The road to get here has been meandering, but with two common threads:
+        the importance of being able to “connect the dots” to build strategies
+        that succeed and the ability to utilize my technical skill set to help
+        build ideas and streamline processes.
+      </Text>
+
+      <Text variant="serif">
+        Over the years, I've continually shifted between development and
+        strategy roles, even within the same job. At{" "}
+        <Link href="https://castandhue.com">Cast &amp; Hue</Link>, my title
+        switch from Strategist to Analyst was long after I started building
+        novel first-party analysis tools and new digital product deliverables.
+        At Interobang, I switch between a development and product management
+        role on a regular basis and I’m capable in both.
+      </Text>
+
+      <Text variant="serif">
+        My professional passions exist at the intersection of emerging
+        technologies, human-centered design, and the humanization of technology.
+        I’m inspired by projects that seek to rediscover balance - balance
+        within the natural world, balance within the human condition, and
+        balance with technology. I have a particular interest in productivity
+        tools and how the right tools and culture can bring thoughtfulness and
+        balance back to the workplace. I love learning and I’m fueled by quickly
+        changing environments where I’m challenged to adapt quickly through
+        innovation, ideation, and the pursuit of new knowledge.
+      </Text>
+
+      <Text variant="serif">
+        Outside of work, I like to step away from the computer and get outside!
+        I enjoy gardening, hiking, cross-country skiing, camping, and
+        backpacking. I’m also a big fan of Goruck and participate in a couple of
+        events each year. It’s great for both physical endurance testing and
+        building leadership skills.
+      </Text>
+    </Stack>
   );
 };
 
@@ -96,7 +151,7 @@ const AboutPage = () => {
 
   return (
     <Layout>
-      <HStack spacing="3rem" align="flex-start">
+      <HStack spacing={isMobile ? "1rem" : "3rem"} align="flex-start">
         <Stack justify="flex-start" align="flex-start">
           <AboutLink pageKey="about" label="About" />
           <AboutLink pageKey="resume" label="Resumè" />
