@@ -14,7 +14,11 @@ exports.createPages = async function ({ actions, graphql }) {
   `);
 
   data.allNotion.edges.forEach((edge) => {
-    const title = edge.node.title.toLowerCase().trim().replace(/\s/g, "-");
+    const title = edge.node.title
+      .toLowerCase()
+      .trim()
+      .replace(/\s/g, "-")
+      .replace(/[\!\?\“\"\”\']/g, "");
     const id = edge.node.id;
     console.log("creating title", title);
 
