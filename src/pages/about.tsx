@@ -154,7 +154,7 @@ const AboutPage = () => {
       <HStack spacing={isMobile ? "1rem" : "3rem"} align="flex-start">
         <Stack justify="flex-start" align="flex-start">
           <AboutLink pageKey="about" label="About" />
-          <AboutLink pageKey="resume" label="Resumè" />
+          {/* <AboutLink pageKey="resume" label="Resumè" /> */}
           <AboutLink pageKey="talks" label="Talks" />
         </Stack>
         <Box
