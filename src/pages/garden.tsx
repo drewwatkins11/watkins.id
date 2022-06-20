@@ -9,6 +9,7 @@ import {
   Button,
   Flex,
   Divider,
+  HStack,
 } from "@chakra-ui/react";
 import Layout from "../layouts/Layout";
 import { useState } from "react";
@@ -45,7 +46,7 @@ const Garden = ({ data }) => {
             {/* <FontAwesomeIcon icon={solid("hand-wave")} /> */}
           </Heading>
           <Heading as="h2" fontWeight={200} fontSize="3xl">
-            A loosly-curated collection of essays, musings, and memories.
+            A loosely-curated collection of essays, musings, and memories.
           </Heading>
           <Stack
             justify={"flex-start"}
@@ -105,18 +106,69 @@ const Garden = ({ data }) => {
           </Stack>
         </Stack>
         <Divider />
-        <Stack>
-          {data.allMarkdownRemark.edges.map((edge) => (
-            <Heading as="h3" fontSize="lg" color="blackChocolate">
-              <Link
-                to={edge.node.frontmatter.title
-                  .toLowerCase()
-                  .replace(/\s/g, "-")
-                  .replace(/[\!\?\“\"\”\']/g, "")}
-              >
-                {edge.node.frontmatter.title}
-              </Link>
-            </Heading>
+        <Stack spacing="lg">
+          {data.allNotion.edges.map((edge) => (
+            <Flex direction="row" justify="space-between">
+              <Stack spacing=".25rem">
+                <Heading as="h3" fontSize="lg" color="blackChocolate">
+                  <Link
+                    to={edge.node.title
+                      .toLowerCase()
+                      .replace(/\s/g, "-")
+                      .replace(/[\!\?\“\"\”\']/g, "")}
+                  >
+                    {edge.node.title}
+                  </Link>
+                </Heading>
+                <HStack align="flex-start">
+                  <Text fontSize="sm" fontWeight={700} whiteSpace="nowrap">
+                    {edge.node.properties.type?.value.name}
+                  </Text>
+                  <Text fontSize="xs">
+                    <FontAwesomeIcon icon={solid("grip-lines-vertical")} />
+                  </Text>
+                  <Text fontSize="sm">
+                    {edge.node.properties.polish?.value.name}
+                  </Text>
+                  <Text fontSize="xs">
+                    <FontAwesomeIcon icon={solid("grip-lines-vertical")} />
+                  </Text>
+                  <Flex wrap="wrap" gap="xs" rowGap=".5rem">
+                    {edge.node.properties.tags?.value.map((tag) => {
+                      return (
+                        <Text
+                          fontSize="xs"
+                          px="xs"
+                          rounded="md"
+                          py="2px"
+                          bgColor={"blueMunsell"}
+                          color="white"
+                        >
+                          {tag.name}
+                        </Text>
+                      );
+                    })}
+                  </Flex>
+                </HStack>
+              </Stack>
+              <Stack align="flex-end" spacing=".2rem">
+                <Text fontSize="xs" whiteSpace="nowrap">
+                  <Text as="span" fontWeight={600}>
+                    Started:
+                  </Text>{" "}
+                  {new Date(
+                    edge.node.properties.originalCreationDate?.value?.start ||
+                      edge.node.createdAt
+                  ).toDateString()}
+                </Text>
+                <Text fontSize="xs" whiteSpace="nowrap">
+                  <Text as="span" fontWeight={600}>
+                    Last updated:
+                  </Text>{" "}
+                  {new Date(edge.node.updatedAt).toDateString()}
+                </Text>
+              </Stack>
+            </Flex>
           ))}
         </Stack>
       </Stack>
@@ -126,11 +178,36 @@ const Garden = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMarkdownRemark(filter: { frontmatter: { published: { eq: true } } }) {
+    allNotion(
+      filter: { properties: { published: { value: { eq: true } } } }
+      sort: { order: DESC, fields: updatedAt }
+    ) {
       edges {
         node {
-          frontmatter {
-            title
+          createdAt
+          updatedAt
+          title
+          properties {
+            tags {
+              value {
+                name
+              }
+            }
+            polish {
+              value {
+                name
+              }
+            }
+            originalCreationDate {
+              value {
+                start
+              }
+            }
+            type {
+              value {
+                name
+              }
+            }
           }
         }
       }

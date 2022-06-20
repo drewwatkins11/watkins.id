@@ -20,7 +20,13 @@ export default function Home() {
           </Text>{" "}
           distills customer needs and market trends into innovative product
           strategy.{" "}
-          <Text as="i" fontWeight={300} fontSize={["2xl", "3xl"]}>
+          <Text
+            as="i"
+            fontWeight={300}
+            fontSize={["2xl", "3xl"]}
+            lineHeight="2rem"
+          >
+            <br />
             (and sometimes builds cool things)
           </Text>
         </Heading>
