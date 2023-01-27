@@ -16,7 +16,6 @@ const Layout = ({
   hideHeaderLinks?: boolean;
   headerProps?: FlexProps;
 }) => {
-  console.dir(siteMetadata);
   return (
     <>
       <Helmet>

@@ -180,7 +180,7 @@ export const query = graphql`
   query {
     allNotion(
       filter: { properties: { published: { value: { eq: true } } } }
-      sort: { order: DESC, fields: updatedAt }
+      sort: { updatedAt: DESC }
     ) {
       edges {
         node {
