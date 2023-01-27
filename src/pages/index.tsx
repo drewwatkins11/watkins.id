@@ -30,14 +30,17 @@ export default function Home() {
             (and sometimes builds cool things)
           </Text>
         </Heading>
-        <Text fontSize="2xl" color="black">
-          Currently leading product at{" "}
+        <Text fontSize="2xl" color="black" maxW="lg">
+          Currently an Innovation Consultant on{" "}
           <strong>
-            <ExternalLink color="international" href="https://interobang.group">
-              Interobang
+            <ExternalLink
+              color="international"
+              href="https://www.erieinsurance.com/"
+            >
+              Erie Insurance's
             </ExternalLink>
-          </strong>
-          .
+          </strong>{" "}
+          Next Level Innovation team.
         </Text>
         <Stack>
           <Heading as="h4" fontSize="xl">

@@ -64,10 +64,12 @@ const About = () => {
       </Heading> */}
       <Text variant="serif">
         I bring products to life through product leadership, full-stack
-        development, and human-centered design. Currently, I work as the Product
-        Lead at <Link href="https://interobang.group">Interobang</Link>, where I
-        have the opportunity to test, prototype, and build products through the
-        early stages of market adoption.
+        development, and human-centered design. Currently, I work as an
+        Innovation Consultant at{" "}
+        <Link href="https://erieinsurance.com">Erie Insurance</Link>, where I
+        have the opportunity to drive innovation efforts within the company
+        while also using human-centered design to create and shepherd products
+        through the early stages of market adoption.
       </Text>
 
       <Text variant="serif">
@@ -83,8 +85,8 @@ const About = () => {
         <Link href="https://castandhue.com">Cast &amp; Hue</Link>, my title
         switch from Strategist to Analyst was long after I started building
         novel first-party analysis tools and new digital product deliverables.
-        At Interobang, I switch between a development and product management
-        role on a regular basis and I’m capable in both.
+        At <Link href="https://interobang.group">Interobang</Link>, I switched
+        between development and product management roles on a regular basis.
       </Text>
 
       <Text variant="serif">
