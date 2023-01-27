@@ -146,7 +146,7 @@ const AboutPage = () => {
         onClick={() => setCurrentPage(pageKey)}
         color="independence"
         fontWeight={400}
-        _active={{ color: "international" }}
+        _active={{ color: "salsa" }}
         isActive={currentPage === pageKey}
       >
         {label}
@@ -175,12 +175,7 @@ const AboutPage = () => {
             </Text>
           </Link>
         </Stack>
-        <Box
-          borderLeft="3px solid"
-          borderColor="international"
-          h="100%"
-          pl="lg"
-        >
+        <Box borderLeft="3px solid" borderColor="salsa" h="100%" pl="lg">
           {PageContent}
         </Box>
       </HStack>

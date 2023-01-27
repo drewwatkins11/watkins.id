@@ -28,6 +28,6 @@ export const colorPalettes = {
 };
 
 export const colorKeys = {
-  background: colorPalettes.earth[100],
+  background: colorPalettes.earth[50],
   text: colorPalettes.earth[900],
 };

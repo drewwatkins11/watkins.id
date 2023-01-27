@@ -49,7 +49,7 @@ export const defaultTheme = {
         textDecoration: "underline 0.10em rgba(255, 255, 255, 0)",
         transition: "text-decoration-color 300ms",
         _hover: {
-          textDecorationColor: colors.international,
+          textDecorationColor: colors.salsa,
         },
       },
       "html, body": {

@@ -33,10 +33,7 @@ export default function Home() {
         <Text fontSize="2xl" color="black" maxW="lg">
           Currently an Innovation Consultant on{" "}
           <strong>
-            <ExternalLink
-              color="international"
-              href="https://www.erieinsurance.com/"
-            >
+            <ExternalLink color="salsa" href="https://www.erieinsurance.com/">
               Erie Insurance's
             </ExternalLink>
           </strong>{" "}
@@ -47,10 +44,10 @@ export default function Home() {
             Where to next?
           </Heading>
           <Link to="/garden">
-            <Text color="international">Wander the garden</Text>
+            <Text color="salsa">Wander the garden</Text>
           </Link>
           <Link to="/about">
-            <Text color="international">Learn more about me</Text>
+            <Text color="salsa">Learn more about me</Text>
           </Link>
         </Stack>
       </Stack>

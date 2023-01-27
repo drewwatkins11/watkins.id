@@ -63,7 +63,7 @@ const Garden = ({ data }) => {
                 variant="link"
                 onClick={handleDescriptionClick}
                 width="auto"
-                color="international"
+                color="salsa"
               >
                 What is digital gardening?
               </Button>
@@ -93,7 +93,7 @@ const Garden = ({ data }) => {
                     onClick={handleDescriptionClick}
                     width="auto"
                     minW="20px"
-                    color="international"
+                    color="salsa"
                     fontSize="xs"
                     p="0"
                     textDecor="underline"
