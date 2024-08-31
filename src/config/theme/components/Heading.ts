@@ -1,7 +1,7 @@
 import type { ComponentStyleConfig } from "@chakra-ui/theme";
 
 export const fontSizeArray = ["4xl", "3rem", "4rem"];
-export const lineHeightArray = ["4xl", "3.5rem", "4.5rem"];
+export const lineHeightArray = ["4xl", "3.15rem", "4.15rem"];
 
 const Heading: ComponentStyleConfig = {
   variants: {

@@ -54,7 +54,7 @@ export const defaultTheme = {
       },
       "html, body": {
         color: colorKeys.text,
-        backgroundColor: colorPalettes.earth[50],
+        backgroundColor: colorPalettes.earth[100],
       },
     },
   },
