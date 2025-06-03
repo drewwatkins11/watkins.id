@@ -1,63 +1,55 @@
 import React from "react";
-import { Stack, Text, Link as ExternalLink, Box, Flex } from "@chakra-ui/react";
+import { Heading, Stack, Text, Link as ExternalLink } from "@chakra-ui/react";
 import Layout from "../layouts/Layout";
 import { Link } from "gatsby";
 import { fontSizeArray } from "../config/theme/components/Heading";
-import { colorPalettes } from "../config/theme/colors";
-
-const nameList: { name: string; link: string; isExternal: boolean }[] = [
-  {
-    name: "Brian",
-    link: "https://www.linkedin.com/in/brwatkins1/",
-    isExternal: true,
-  },
-  { name: "Drew", link: "/drew", isExternal: false },
-];
 
 export default function Home() {
-  const NameElement = (props) => (
-    <Text as="h1" fontWeight={400} size="h1" fontSize={fontSizeArray}>
-      {props.name}
-    </Text>
-  );
-
   return (
-    <Layout hideHeader hideHeaderLinks>
-      <Stack
-        direction={["column", "row"]}
-        w="full"
-        h="calc(100vh - 80px)"
-        gap="1rem"
-        _before={{
-          content: "''",
-          border: `1px dotted ${colorPalettes.earth[700]}`,
-          alignSelf: "stretch",
-          marginTop: "80px",
-        }}
-      >
-        {nameList.map((name, index) => (
-          <Flex
-            key={index}
-            h="full"
-            w="full"
-            justifyContent={["flex-start", "center"]}
-            alignItems="center"
-            _first={{ order: "-1" }}
+    <Layout hideHeaderLinks>
+      <Stack direction="column" spacing="3xl">
+        <Heading
+          as="h1"
+          fontWeight={400}
+          fontStyle="italic"
+          size="h1"
+          fontSize={fontSizeArray}
+        >
+          <Text fontSize={fontSizeArray} fontWeight={900} as="span">
+            Drew
+          </Text>{" "}
+          distills customer needs and market trends into innovative product
+          strategy.{" "}
+          <Text
+            as="i"
+            fontWeight={300}
+            fontSize={["2xl", "3xl"]}
+            lineHeight="2rem"
           >
-            <Stack gap="0px">
-              <Text>Learn more about</Text>
-              {name.isExternal ? (
-                <ExternalLink href={name.link} isExternal>
-                  <NameElement name={name.name} />
-                </ExternalLink>
-              ) : (
-                <Link to={name.link}>
-                  <NameElement name={name.name} />
-                </Link>
-              )}
-            </Stack>
-          </Flex>
-        ))}
+            <br />
+            (and sometimes builds cool things)
+          </Text>
+        </Heading>
+        <Text fontSize="2xl" color="black" maxW="lg">
+          Currently bringing{" "}
+          <strong>
+            <ExternalLink color="salsa" href="https://exitwithella.io/">
+              ELLA
+            </ExternalLink>
+          </strong>{" "}
+          to market.
+        </Text>
+        <Stack>
+          <Heading as="h4" fontSize="xl">
+            Where to next?
+          </Heading>
+          <Link to="/garden">
+            <Text color="salsa">Wander the garden</Text>
+          </Link>
+          <Link to="/about">
+            <Text color="salsa">Learn more about me</Text>
+          </Link>
+        </Stack>
       </Stack>
     </Layout>
   );
